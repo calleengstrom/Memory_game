@@ -14,7 +14,6 @@ int user_pressed[MAX_SIZE_ARRAY];
 int start_game()
 {
     radnom_lights_sequence();
-    int index = 0;
     int game_lights = 2;
     int life = 3;
     int points = 0;
@@ -24,14 +23,22 @@ int start_game()
         int index_tries = 0;
         for (int j = 0; j < game_lights; j++)
         {
-            game_ligth_sequence(j);
+            game_ligth_sequence(lights_sequence[j]);
         }
         for (int i = 0; i < game_lights; i++)
         {
+            // flush_all_buttons();
             user_pressed[i] = get_input();
-            if (user_pressed[i] != lights_sequence[i])
+            
+
+            if (user_pressed[i] == lights_sequence[i])
+            {
+                
+            }
+            else
             {
                 index_tries++;
+                
                 life--;
                 break;
             }

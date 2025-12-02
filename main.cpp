@@ -22,12 +22,12 @@ int main(void) {
     
     
     // Handle leds as a list of leds
-    led_handle leds[] = {
-        led_handle(&DDRB, &PORTB, &PINB, PB0),
-        led_handle(&DDRD, &PORTD, &PIND, PD7),
-        led_handle(&DDRD, &PORTD, &PIND, PD6),
-        led_handle(&DDRD, &PORTD, &PIND, PD5)
-    };
+    // led_handle leds[] = {
+    //     led_handle(&DDRB, &PORTB, &PINB, PB0),
+    //     led_handle(&DDRD, &PORTD, &PIND, PD7),
+    //     led_handle(&DDRD, &PORTD, &PIND, PD6),
+    //     led_handle(&DDRD, &PORTD, &PIND, PD5)
+    // };
     
     
 

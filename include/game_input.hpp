@@ -1,7 +1,8 @@
 #ifndef GAME_INPUT_HPP_
 #define GAME_INPUT_HPP_
 #include "button_driver.hpp"
-typedef enum LED_PRESSED{
+typedef enum LED_PRESSED
+{
     BLUE_LED_PRESSED,
     YELLOW_LED_PRESSED,
     RED_LED_PRESSED,
@@ -9,12 +10,13 @@ typedef enum LED_PRESSED{
 };
 int main_meny();
 int get_input();
-
-class input_sourse {
-    private:
+void flush_all_buttons();
+class input_sourse
+{
+private:
     button_handle buttons[4];
 
-    public:
+public:
     input_sourse();
     int get_input();
 };

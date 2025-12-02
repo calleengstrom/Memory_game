@@ -94,7 +94,7 @@ void game_over_led_show()
 
 void game_ligth_sequence(int led_num)
 {
-    int ms_wait = 1500;
+    int ms_wait = 1000;
     switch (led_num)
     {
     case BLUE_LED_ON:
@@ -124,6 +124,7 @@ void game_ligth_sequence(int led_num)
     default:
         break;
     }
+    millis_wait_ms(ms_wait);
 }
 
 // void game_led_sequence(int level)
