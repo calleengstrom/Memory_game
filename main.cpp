@@ -18,12 +18,7 @@ int main(void) {
     setup_seed();
 
     // Handle buttons as a list of buttons
-    button_handle buttons[] = {
-        button_handle(&DDRB, &PORTB, &PINB, PB5),
-        button_handle(&DDRB, &PORTB, &PINB, PB4),
-        button_handle(&DDRB, &PORTB, &PINB, PB3),
-        button_handle(&DDRB, &PORTB, &PINB, PB2)
-    };
+    
     
     // Handle leds as a list of leds
     led_handle leds[] = {
