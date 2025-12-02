@@ -9,7 +9,7 @@ typedef enum LED_PRESSED{
     GREEN_LED_PRESSED,
 };
 int main_meny();
-
+int get_input();
 
 class input_source {
 private:
