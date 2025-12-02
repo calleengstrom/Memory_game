@@ -8,6 +8,7 @@
 #include "include/button_driver.hpp"
 #include "include/random_seed.hpp"
 #include "include/game_gui.hpp"
+#include "include/game_system.hpp"
 
 int main(void) {
     // Necessary to for counting time 
@@ -32,10 +33,10 @@ int main(void) {
 
     while(1) {
         // Check if the buttons has been pressed - in that case toggle the led
-        for (uint8_t i = 0; i < (sizeof(leds) / sizeof(leds[0])); i++) {
-            if (buttons[i].is_pressed()) leds[i].toggle();
-        }
-
+        // for (uint8_t i = 0; i < (sizeof(leds) / sizeof(leds[0])); i++) {
+        //     if (buttons[i].is_pressed()) leds[i].toggle();
+        // }
+        start_ard();
         // Non-blocking delay from millis library
         millis_wait_ms(20);
     }

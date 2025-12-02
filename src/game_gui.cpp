@@ -94,7 +94,7 @@ void game_over_led_show()
 
 void game_ligth_sequence(int led_num)
 {
-    int ms_wait = 200;
+    int ms_wait = 1500;
     switch (led_num)
     {
     case BLUE_LED_ON:
@@ -103,7 +103,7 @@ void game_ligth_sequence(int led_num)
         blue_led.turn_off();
         break;
 
-    case BLUE_LED_ON:
+    case YELLOW_LED_ON:
         yellow_led.turn_on();
         millis_wait_ms(ms_wait);
         yellow_led.turn_off();
@@ -118,6 +118,7 @@ void game_ligth_sequence(int led_num)
     case GREEN_LED_ON:
         green_led.turn_on();
         millis_wait_ms(ms_wait);
+        green_led.turn_off();
         break;
 
     default:
@@ -125,9 +126,9 @@ void game_ligth_sequence(int led_num)
     }
 }
 
-void game_led_sequence(int level)
-{
-    for (size_t i = 0; i < level; i++)
-    {
-    }
-}
+// void game_led_sequence(int level)
+// {
+//     for (size_t i = 0; i < level; i++)
+//     {
+//     }
+// }

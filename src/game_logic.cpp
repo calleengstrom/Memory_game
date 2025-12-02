@@ -2,6 +2,7 @@
 #include "../include/game_logic.hpp"
 #include "../include/random_seed.hpp"
 #include "../include/game_input.hpp"
+#include "../include/game_gui.hpp"
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/power.h>
@@ -9,13 +10,13 @@
 
 int lights_sequence[MAX_SIZE_ARRAY];
 int user_pressed[MAX_SIZE_ARRAY];
+
 int start_game()
 {
     radnom_lights_sequence();
-    int i = 0;
+    int index = 0;
     int game_lights = 2;
     int life = 3;
-    int userinput;
     int points = 0;
 
     do
@@ -23,7 +24,7 @@ int start_game()
         int index_tries = 0;
         for (int j = 0; j < game_lights; j++)
         {
-            // light up bulb [j]
+            game_ligth_sequence(j);
         }
         for (int i = 0; i < game_lights; i++)
         {

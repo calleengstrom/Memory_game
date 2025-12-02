@@ -1,6 +1,7 @@
 #include "../include/game_input.hpp"
 #include "../include/game_gui.hpp"
-
+#include "../include/button_driver.hpp"
+#include "../include/millis.h"
 static button_handle buttons[] = {
         button_handle(&DDRB, &PORTB, &PINB, PB5),
         button_handle(&DDRB, &PORTB, &PINB, PB4),
@@ -8,29 +9,15 @@ static button_handle buttons[] = {
         button_handle(&DDRB, &PORTB, &PINB, PB2)
     };
 
-input_source::input_source() {
-    
-}
 
-int input_source::get_input()
+int get_input()
 {
     while (1)
     {
-        if (buttons[0].is_pressed())
-        {
-            return BLUE_LED_PRESSED;
+        for (int i = 0; i < (sizeof(buttons)/sizeof(buttons[0])); i++) {
+            if (buttons[i].is_pressed()) return i;
         }
-        else if (buttons[1].is_pressed())
-        {
-            return YELLOW_LED_PRESSED;
-        }
-        else if (buttons[2].is_pressed())
-        {
-            return RED_LED_PRESSED;
-        }
-        else if (buttons[3].is_pressed())
-        {
-            return GREEN_LED_PRESSED;
-        }
+
+        millis_wait_ms(10);
     }
 }
