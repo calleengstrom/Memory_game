@@ -7,6 +7,7 @@
 #include "../include/led_driver.hpp"
 #include "../include/button_driver.hpp"
 #include "../include/random_seed.hpp"
+#include "../include/led_driver.hpp"
 
 led_handle blue_led = led_handle(&DDRB, &PORTB, &PINB, PB0);
 led_handle yellow_led = led_handle(&DDRD, &PORTD, &PIND, PB7);
@@ -21,7 +22,7 @@ void start_up_led_show()
     millis_wait_ms(100);
     blue_led.turn_off();
 
-    millis_wait_ms(100);    
+    millis_wait_ms(100);
     yellow_led.turn_on();
     millis_wait_ms(100);
     yellow_led.turn_off();
@@ -60,14 +61,14 @@ void life_lost_led_show()
         yellow_led.turn_on();
         red_led.turn_on();
         green_led.turn_on();
-        
+
         millis_wait_ms(ms_wait);
-    
-        red_led.turn_off();    
+
+        red_led.turn_off();
         green_led.turn_off();
         yellow_led.turn_off();
         blue_led.turn_off();
-    }    
+    }
 }
 
 void game_over_led_show()
@@ -81,21 +82,52 @@ void game_over_led_show()
         yellow_led.turn_on();
         red_led.turn_on();
         green_led.turn_on();
-        
+
         millis_wait_ms(ms_wait);
-    
-        red_led.turn_off();    
+
+        red_led.turn_off();
         green_led.turn_off();
         yellow_led.turn_off();
         blue_led.turn_off();
-    }    
+    }
+}
+
+void game_ligth_sequence(int led_num)
+{
+    int ms_wait = 200;
+    switch (led_num)
+    {
+    case BLUE_LED_ON:
+        blue_led.turn_on();
+        millis_wait_ms(ms_wait);
+        blue_led.turn_off();
+        break;
+
+    case BLUE_LED_ON:
+        yellow_led.turn_on();
+        millis_wait_ms(ms_wait);
+        yellow_led.turn_off();
+        break;
+
+    case RED_LED_ON:
+        red_led.turn_on();
+        millis_wait_ms(ms_wait);
+        red_led.turn_off();
+        break;
+
+    case GREEN_LED_ON:
+        green_led.turn_on();
+        millis_wait_ms(ms_wait);
+        break;
+
+    default:
+        break;
+    }
 }
 
 void game_led_sequence(int level)
 {
     for (size_t i = 0; i < level; i++)
     {
-        
-        
-    }    
+    }
 }
