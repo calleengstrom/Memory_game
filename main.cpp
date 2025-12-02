@@ -33,7 +33,7 @@ int main(void) {
         led_handle(&DDRD, &PORTD, &PIND, PD5)
     };
     
-    init_lights();
+    
 
     while(1) {
         // Check if the buttons has been pressed - in that case toggle the led

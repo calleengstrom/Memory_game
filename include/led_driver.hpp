@@ -8,6 +8,14 @@
 
 #define DDR DDRB
 
+
+
+typedef enum LED_ON{
+    BLUE_LED_ON,
+    YELLOW_LED_ON,
+    RED_LED_ON,
+    GREEN_LED_ON,
+};
 /* 
 Handle for controlling LEDs on AVR ATMega328p. Exposes the following functions:
 *  - turn_on()
