@@ -4,5 +4,6 @@
 /* 
     Responsible for the lights and how they behave
 */
+void init_lights();
 
 #endif

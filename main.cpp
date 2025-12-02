@@ -7,6 +7,7 @@
 #include "include/led_driver.hpp"
 #include "include/button_driver.hpp"
 #include "include/random_seed.hpp"
+#include "include/game_gui.hpp"
 
 int main(void) {
     // Necessary to for counting time 
@@ -32,6 +33,8 @@ int main(void) {
         led_handle(&DDRD, &PORTD, &PIND, PD5)
     };
     
+    init_lights();
+
     while(1) {
         // Check if the buttons has been pressed - in that case toggle the led
         for (uint8_t i = 0; i < (sizeof(leds) / sizeof(leds[0])); i++) {
